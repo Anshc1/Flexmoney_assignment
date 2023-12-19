@@ -4,16 +4,16 @@ const bodyParser = require('body-parser');
 const { validateUserData } = require('./middleware/validationMiddleware');
 const { submitForm, completePayment } = require('./controller/formController');
 const sequelize = require('./utils/db');
-require("dotenv").config();
+
 
 const app = express();
 
-app.use(cors());
 
 // Middleware
-
+app.use(cors());
 app.use(bodyParser.json());
-// Routes
+
+// Routes 
 app.post('/submit-form', validateUserData, submitForm);
 app.post('/PaymentGateway', validateUserData, completePayment);
 
