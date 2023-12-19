@@ -9,7 +9,7 @@ const submitForm = async (req, res) => {
         );
         res.status(200).json({status :'Admission successfull'});
       } catch (error) {
-        res.status(500).json({ status: `Internal Server Error :${error} ` });
+        res.status(500).json({ status: `Internal Server Error :${error}` });
       }    
   };
 
